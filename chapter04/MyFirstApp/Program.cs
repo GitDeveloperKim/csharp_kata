@@ -8,9 +8,12 @@ namespace MyFirstApp
         static void Main(string[] args)
         {
             // c# 6.0 >= 
+            // chapter 4.8 엘비스 연산자 
             ArrayList a = null; 
             a?.Add("야구");
             a?.Add("축구");
+
+            // a는 null 이므로 아무것도 반환하지 않는다
             WriteLine($"Count : {a?.Count}");
             WriteLine($"{a?[0]}");
             WriteLine($"{a?[1]}");
@@ -22,6 +25,19 @@ namespace MyFirstApp
             WriteLine($"Count : {a?.Count}");
             WriteLine($"{a?[0]}");
             WriteLine($"{a?[1]}");
+
+            // chapter 4.11 null 병합 연산자 
+            int? num = null;
+            WriteLine($"{num ?? 0}");
+
+            num = 99;
+            WriteLine($"{num ?? 0}");
+
+            string str = null;
+            WriteLine($"{str ?? "Default"}");
+
+            str = "Specific";
+            WriteLine($"{str ?? "Default"}");
         }
     }
 }
