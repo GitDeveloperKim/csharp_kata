@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections;
+using static System.Console;
 
 namespace MyFirstApp
 {
@@ -6,12 +7,21 @@ namespace MyFirstApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-        }
+            // c# 6.0 >= 
+            ArrayList a = null; 
+            a?.Add("야구");
+            a?.Add("축구");
+            WriteLine($"Count : {a?.Count}");
+            WriteLine($"{a?[0]}");
+            WriteLine($"{a?[1]}");
 
-        public string Greet(string name)
-        {
-            return $"Hello, {name}!";
+            // a가 null 이 더이상 아닙니다. 
+            a = new ArrayList();
+            a?.Add("야구");
+            a?.Add("축구");
+            WriteLine($"Count : {a?.Count}");
+            WriteLine($"{a?[0]}");
+            WriteLine($"{a?[1]}");
         }
     }
 }
