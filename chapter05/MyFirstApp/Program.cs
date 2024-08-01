@@ -41,6 +41,23 @@ namespace MyFirstApp
             {
                 WriteLine(a);
             }
+
+            // 선언 패턴
+            object foo =23;
+            if (foo is int bar) // foo 가 int 형식이면 foo를 int형식으로 변환하여 bar에 할당
+            {
+                WriteLine(bar);
+            }
+            // 형식 패턴 
+            // 상수 패턴 
+            // 프로퍼티 패턴 
+            // 관계 패턴 
+            // 논리 패턴 
+            // 괄호 패턴 
+            // 위치 패턴 
+            // var 패턴 
+            // 무시 패턴 
+            // 목록 패턴 
         }
     }
 }
