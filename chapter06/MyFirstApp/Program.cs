@@ -23,6 +23,10 @@ namespace MyFirstApp
 
             Divide(a,b,out int c, out int d); // 초기화 하지 않아도 컴파일러가 호출 당하는 메소드에서 그 지역 변수를 할당할 것을 보장 
             WriteLine($"a:{a}, b:{b}, a/b:{c}, a%b:{d}");
+
+            // params example 
+            int sum = Sum(3,4,5,6,7,8,9,10);
+            WriteLine($"Sum: {sum}");
         }
 
         // 참조형 매개변수 주목 pass by reference
@@ -36,6 +40,24 @@ namespace MyFirstApp
         {
             quotient = a/b;
             remainder = a%b;
+        }
+
+        static int Sum(params int [] args) 
+        {
+            Write("Summing....");
+
+            int sum = 0;
+
+            for (int i=0; i < args.Length; i++)
+            {
+                if (i > 0)
+                    Write(", ");
+                Write (args[i]);
+
+                sum += args[i];
+            }
+            WriteLine();
+            return sum;
         }
     }
 }
