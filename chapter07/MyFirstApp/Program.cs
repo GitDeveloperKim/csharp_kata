@@ -31,6 +31,24 @@ namespace MyFirstApp
                 Console.WriteLine($"a:{a}, b:{b}, c:{c}");
             }
         }
+
+        class MyName 
+        {
+            protected string Name;
+            public MyName(string Nme) 
+            {
+                this.Name = Name;
+                Console.WriteLine($"MyName {this.Name}");
+            }
+        }
+
+        class OurName : MyName
+        {
+            public OurName(string Name) : base(Name) 
+            {
+                Console.WriteLine($"OurName {this.Name}");
+            }
+        }
         static void Main(string[] args)
         {
             MyClass a = new MyClass();
@@ -38,6 +56,10 @@ namespace MyFirstApp
             MyClass b = new MyClass(1);
 
             MyClass c = new MyClass(10,20);
+
+            MyName d = new MyName("Nick");
+
+            MyName e = new OurName("David");
         }
     }
 }
