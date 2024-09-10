@@ -6,7 +6,7 @@ namespace MyFirstApp
     {
         static void Main(string[] args)
         {
-            ClimateMonitor monitor = new ClimateMonitor(new ConsoleLogger());
+            ClimateMonitor monitor = new ClimateMonitor(new FileLogger("log.txt"));
             monitor.start();
         }
 
